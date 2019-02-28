@@ -9,5 +9,5 @@
 10.times do |i|
   title = Faker::Name.name
   content = Faker::Lorem.sentence
-  Post.create(title: title, content: content)
+  Post.create(title: "たいとる#{i}", content: "こんてんと#{i}")
 end
