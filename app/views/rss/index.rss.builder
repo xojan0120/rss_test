@@ -9,13 +9,13 @@ xml.rss(
   "xmlns:slash" => "http://purl.org/rss/1.0/modules/slash/"
 ) do
   xml.channel do
-    xml.title "サイト名"
-    xml.description "説明"
-    xml.link "サイトURL"
+    xml.title @site_title
+    xml.description @site_description
+    xml.link @site_url
     xml.language "ja-ja"
     xml.ttl "40"
     xml.pubDate(Time.now.strftime("%a, %d %b %Y %H:%M:%S %Z"))
-    xml.atom :link, "href" => "RSSのURL", "rel" => "self", "type" => "application/rss+xml"
+    xml.atom :link, "href" => @atom_url, "rel" => "self", "type" => "application/rss+xml"
     @posts.each do |p|
       xml.item do
         xml.title p.title #タイトル
